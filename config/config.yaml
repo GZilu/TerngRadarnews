@@ -91,14 +91,13 @@ notification:
     # 核心修改：完全匹配你已有的 MAIL_* 密钥名称
     email:
       enable: true  # 关键：启用邮件通知（必须添加）
-      from: "${MAIL_FROM}"           # 发件人邮箱（匹配你的 secret: MAIL_FROM）
+      from: "${{MAIL_FROM"           # 发件人邮箱（匹配你的 secret: MAIL_FROM）
       password: "${MAIL_PASSWORD}"    # 发件人邮箱授权码（匹配你的 secret: MAIL_PASSWORD）
       to: "${MAIL_TO}"               # 收件人邮箱（英文键名，匹配你的 secret: MAIL_TO）
       smtp_server: "smtp.163.com"  # SMTP服务器（匹配你的环境变量，或直接填固定值如 smtp.163.com）
-      smtp_port: "587"      # SMTP端口（匹配你的环境变量，或直接填 587）
+      smtp_port: "465"      # SMTP端口（匹配你的环境变量，或直接填 587）
       subject: "TrendRadar 数据抓取报告"    # 可选：自定义邮件主题
       send_html: true                      # 可选：发送HTML格式报告（推荐开启）
-      use_tls: true  # 开启 TLS 加密（163 SMTP 587 端口需要 TLS）
       timeout: 30  # 连接超时时间，避免因超时断开
     ntfy:
       server_url: "https://ntfy.sh"
