@@ -147,7 +147,7 @@ jobs:
           MAIL_TO: ${{ secrets.MAIL_TO }}
           # 关键修改：适配163邮箱的SMTP服务器和端口（无需额外密钥，直接生效）
           EMAIL_SMTP_SERVER: "smtp.163.com"
-          EMAIL_SMTP_PORT: "587"
+          EMAIL_SMTP_PORT: "465"
           # 其余原有配置完全保留，无需改动
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_SERVER_URL: ${{ secrets.NTFY_SERVER_URL }}
