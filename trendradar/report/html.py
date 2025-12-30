@@ -563,7 +563,7 @@ def render_html_content(
                 <div class="word-group">
                     <div class="word-header">
                         <div class="word-info">
-                            <div class="word-name">{escaped_word}</div>
+                            <!-- <div class="word-name">{escaped_word}</div> -->
                             <div class="word-count {count_class}">{count} 条</div>
                         </div>
                         <div class="word-index">{i}/{total_count}</div>
