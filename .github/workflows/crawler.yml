@@ -35,7 +35,7 @@ on:
     #   "15 * * * *"     → 每小时第15分钟 / minute 15 every hour
     #   "30 0-14 * * *"  → 北京时间 8:00-22:00 每小时第30分钟 / Beijing 8am-10pm
     #
-    - cron: "33 * * * *"
+    - cron: "15 * * * *"
 
   workflow_dispatch:
 
@@ -161,3 +161,19 @@ jobs:
           S3_REGION: ${{ secrets.S3_REGION }}
           GITHUB_ACTIONS: true
         run: python -m trendradar
+      - name: Send Investment News via Email
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.163.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: 投资热点抓取结果 | ${{ github.repository }}
+          到: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            ✅ 本次投资热点抓取完成！
+            任务运行链接：${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            抓取关键词：新能源汽车,锂电池,半导体,光伏产业,生物医药
