@@ -61,7 +61,7 @@ rss:
 # ===============================================================
 report:
   mode: "current"
-  rank_threshold: 5
+  rank_threshold: 10
   sort_by_position_first: false
   max_news_per_keyword: 0
   reverse_content_order: false
@@ -93,7 +93,7 @@ notification:
       from: "${MAIL_FROM}"           # 匹配你的 MAIL_FROM 密钥
       password: "${MAIL_PASSWORD}"    # 匹配你的 MAIL_PASSWORD 密钥（你的授权码）
       to: "${MAIL_TO}"               # 匹配你的 MAIL_TO 密钥（收件人邮箱，多收件人逗号分隔）
-      smtp_server: "${MAIL_FROM}"     # 自动识别SMTP（或可填 smtp.qq.com，优先用你的密钥关联邮箱）
+      smtp_server: "smtp.163.com"     # 自动识别SMTP（或可填 smtp.qq.com，优先用你的密钥关联邮箱）
       smtp_port: "587"                # 通用端口（QQ/163邮箱均支持，无需额外密钥）
       # 可选：若需要显式引用 MAIL_USERNAME，可添加（当前配置已足够运行）
       # username: "${MAIL_USERNAME}"
