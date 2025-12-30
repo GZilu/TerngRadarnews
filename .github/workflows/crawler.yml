@@ -171,7 +171,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: 投资热点抓取结果 | ${{ github.repository }}
-          到: ${{ secrets.MAIL_TO }}
+          to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: |
             ✅ 本次投资热点抓取完成！
