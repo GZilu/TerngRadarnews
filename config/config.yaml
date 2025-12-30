@@ -117,8 +117,8 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
-  rank_threshold: 5                   # 排名高亮阈值
+  mode: "daily"                     # 可选: daily | current | incremental
+  rank_threshold: 3                   # 排名高亮阈值
   sort_by_position_first: false       # true=按配置位置排序，false=按热点条数排序
   max_news_per_keyword: 0             # 每个关键词最大显示数量（0=不限制）
   reverse_content_order: true        # false=热点词汇统计在前，true=新增热点新闻在前
@@ -265,8 +265,8 @@ advanced:
   # 排序权重（用于重新排序不同平台的热搜）
   # 合起来等于 1
   weight:
-    rank: 0.6                         # 排名权重
-    frequency: 0.3                    # 频次权重
+    rank: 0.4                         # 排名权重
+    frequency: 0.5                    # 频次权重
     hotness: 0.1                      # 热度权重
 
   # 多账号限制
