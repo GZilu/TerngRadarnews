@@ -90,13 +90,14 @@ notification:
       chat_id: ""
     # 核心修改：完全匹配你已有的 MAIL_* 密钥名称
     email:
-      from: "${MAIL_FROM}"           # 匹配你的 MAIL_FROM 密钥
-      password: "${MAIL_PASSWORD}"    # 匹配你的 MAIL_PASSWORD 密钥（你的授权码）
-      到: "${MAIL_TO}"               # 匹配你的 MAIL_TO 密钥（收件人邮箱，多收件人逗号分隔）
-      smtp_server: "${MAIL_FROM}"     # 自动识别SMTP（或可填 smtp.qq.com，优先用你的密钥关联邮箱）
-      smtp_port: "587"                # 通用端口（QQ/163邮箱均支持，无需额外密钥）
-      # 可选：若需要显式引用 MAIL_USERNAME，可添加（当前配置已足够运行）
-      # username: "${MAIL_USERNAME}"
+      enable: true  # 关键：启用邮件通知（必须添加）
+      from: "${MAIL_FROM}"           # 发件人邮箱（匹配你的 secret: MAIL_FROM）
+      password: "${MAIL_PASSWORD}"    # 发件人邮箱授权码（匹配你的 secret: MAIL_PASSWORD）
+      to: "${MAIL_TO}"               # 收件人邮箱（英文键名，匹配你的 secret: MAIL_TO）
+      smtp_server: "smtp.163.com"  # SMTP服务器（匹配你的环境变量，或直接填固定值如 smtp.163.com）
+      smtp_port: "587"      # SMTP端口（匹配你的环境变量，或直接填 587）
+      subject: "TrendRadar 数据抓取报告"    # 可选：自定义邮件主题
+      send_html: true                      # 可选：发送HTML格式报告（推荐开启）
     ntfy:
       server_url: "https://ntfy.sh"
       topic: ""
@@ -105,7 +106,6 @@ notification:
       url: ""
     slack:
       webhook_url: ""
-
 
 # ===============================================================
 # 6. 存储配置（关键：启用HTML，保障邮件推送有内容）
