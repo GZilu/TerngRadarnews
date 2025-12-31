@@ -464,6 +464,122 @@ def render_html_content(
                     width: 100%;
                 }
             }
+
+            /* 夜间模式适配 - 自动识别系统深色模式 */
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background: #121212;
+                    color: #e0e0e0;
+                }
+                .container {
+                    background: #1e1e1e;
+                    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+                }
+                .header {
+                    background: linear-gradient(135deg, #3730a3 0%, #5b21b6 100%);
+                }
+                .save-btn {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+                .save-btn:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-color: rgba(255, 255, 255, 0.4);
+                }
+                .word-name {
+                    color: #bb86fc;
+                }
+                .word-count {
+                    color: #a0a0a0;
+                }
+                .word-count.hot { color: #cf6679; }
+                .word-count.warm { color: #ffb74d; }
+                .word-index {
+                    color: #707070;
+                }
+                .word-header {
+                    border-bottom-color: #333;
+                }
+                .news-item {
+                    border-bottom-color: #333;
+                }
+                .news-number {
+                    background: #333;
+                    color: #707070;
+                }
+                .source-name {
+                    color: #9e9e9e;
+                }
+                .rank-num {
+                    background: #424242;
+                }
+                .rank-num.top { background: #b71c1c; }
+                .rank-num.high { background: #e65100; }
+                .time-info {
+                    color: #9e9e9e;
+                }
+                .count-info {
+                    color: #66bb6a;
+                }
+                .news-title {
+                    color: #e0e0e0;
+                }
+                .news-link {
+                    color: #8ab4f8;
+                }
+                .news-link:visited {
+                    color: #b794f4;
+                }
+                .new-section {
+                    border-top-color: #333;
+                }
+                .new-section-title {
+                    color: #e0e0e0;
+                }
+                .new-source-title {
+                    color: #9e9e9e;
+                    border-bottom-color: #333;
+                }
+                .new-item {
+                    border-bottom-color: #333;
+                }
+                .new-item-number {
+                    background: #333;
+                    color: #707070;
+                }
+                .new-item-rank {
+                    background: #424242;
+                }
+                .new-item-title {
+                    color: #e0e0e0;
+                }
+                .error-section {
+                    background: #37003c;
+                    border-color: #6a0080;
+                }
+                .error-title {
+                    color: #f48fb1;
+                }
+                .error-item {
+                    color: #f0f0f0;
+                }
+                .footer {
+                    background: #262626;
+                    border-top-color: #333;
+                }
+                .footer-content {
+                    color: #9e9e9e;
+                }
+                .project-name {
+                    color: #e0e0e0;
+                }
+                .footer-link {
+                    color: #8ab4f8;
+                }
+                .footer-link:hover {
+                    color: #b794f4;
+                }
+            }
         </style>
     </head>
     <body>
